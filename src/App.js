@@ -5,39 +5,18 @@ import Button from "./components/squares";
 function App() {
   
   const [board, setboard] = useState([
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
   ]);
   const [XisNext, setXisNext] = useState("X");
 
-  function handleClick(index) {
-    setboard([...board.slice(0, index), XisNext, ...board.slice(index + 1)]);
-    if (XisNext === "X") {
-      setXisNext("O");
-    } else {
-      setXisNext("X")
-    }
-    const winner = calculateWinner(board)
-    if (winner !==null){
-      alert(`${winner} is the WINNER!!!`);
-      // setBoard([null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,])
-    }
-  }
 
   function calculateWinner(board){
     const lines = [
@@ -59,9 +38,35 @@ function App() {
     return null;
   }
   
+  
+
+  function handleClick(index) {
+    setboard([...board.slice(0, index), XisNext, ...board.slice(index + 1)]);
+    if (XisNext === "X") {
+      setXisNext("O");
+    } else {
+      setXisNext("X")
+    }
+    const winner = calculateWinner(board)
+    console.log(winner);
+    if (winner !==null){
+      alert(`${winner} is the WINNER!!!`);
+      // setBoard([null,
+      //   null,
+      //   null,
+      //   null,
+      //   null,
+      //   null,
+      //   null,
+      //   null,
+      //   null,])
+    }
+  }
+
+  
 
   return (
-    <div className="App">
+    <div className="grid-container">
       {board.map((item, index) => (
         <Button item={item} index={index} handleClick={handleClick} />
       ))}
