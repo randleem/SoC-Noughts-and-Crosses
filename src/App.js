@@ -14,7 +14,7 @@ let nullList = [null,
 
 function App() {
   
-  const [board, setboard] = useState(nullList);
+  const [board, setBoard] = useState(nullList);
   const [XisNext, setXisNext] = useState("🤹");
 
 
@@ -46,12 +46,12 @@ function App() {
     } else {
       setXisNext("🤹")
     }
+    setBoard(newBoard);
     const winner = calculateWinner(newBoard)
-    setboard(newBoard);
-    console.log(winner);
     if (winner !==null){
-      alert(`${winner} is the WINNER!!!`);
-      setboard(nullList)
+      let h2 = document.querySelector("h2");
+      h2.innerText = `${winner} is the WINNER!!!`;
+      // setBoard(nullList)
     }
   }
 
