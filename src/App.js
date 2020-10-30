@@ -2,19 +2,19 @@ import React, { useState } from "react";
 import "./App.css";
 import Button from "./components/squares";
 
+let nullList = [null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,];
+
 function App() {
   
-  const [board, setboard] = useState([
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ]);
+  const [board, setboard] = useState(nullList);
   const [XisNext, setXisNext] = useState("X");
 
 
@@ -38,28 +38,20 @@ function App() {
     return null;
   }
   
-  
 
   function handleClick(index) {
-    setboard([...board.slice(0, index), XisNext, ...board.slice(index + 1)]);
+    const newBoard = [...board.slice(0, index), XisNext, ...board.slice(index + 1)];
     if (XisNext === "X") {
       setXisNext("O");
     } else {
       setXisNext("X")
     }
-    const winner = calculateWinner(board)
+    const winner = calculateWinner(newBoard)
+    setboard(newBoard);
     console.log(winner);
     if (winner !==null){
       alert(`${winner} is the WINNER!!!`);
-      // setBoard([null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,
-      //   null,])
+      setboard(nullList)
     }
   }
 
@@ -78,13 +70,3 @@ export default App;
 
 //item is either null, X or 0 on the board 
 //index is index from array
-
-// null,
-// null,
-// null,
-// null,
-// null,
-// null,
-// null,
-// null,
-// null,
