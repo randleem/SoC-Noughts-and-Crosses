@@ -2,13 +2,24 @@ body {
   font: 14px;
   font-family: "Arial Black", Gadget, sans-serif;
   text-align: center;
+  color: #6f7271;
+  background-image: linear-gradient(to right, #BADBCA, #FDEBCE, #EFC1BA);
   
+}
+
+.reset {
+  font: 15px;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-align: center;
+  color: #6f7271;
+  padding: 10px;
+  margin: 30px;
 }
 
 
 .square {
   background: #fff;
-  border: 2px solid #999;
+  border: 2px solid #6f7271;;
   float: left;
   font-size: 24px;
   font-weight: bold;
@@ -26,8 +37,7 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 100px);
   grid-template-rows: repeat(3);
-  margin-left: 40%;
+  margin-left: 38.5%;
 
 }
 
-}
