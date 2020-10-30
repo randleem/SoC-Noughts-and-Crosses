@@ -15,7 +15,7 @@ let nullList = [null,
 function App() {
   
   const [board, setboard] = useState(nullList);
-  const [XisNext, setXisNext] = useState("X");
+  const [XisNext, setXisNext] = useState("🤹");
 
 
   function calculateWinner(board){
@@ -41,10 +41,10 @@ function App() {
 
   function handleClick(index) {
     const newBoard = [...board.slice(0, index), XisNext, ...board.slice(index + 1)];
-    if (XisNext === "X") {
-      setXisNext("O");
+    if (XisNext === "🤹") {
+      setXisNext("🧎‍♀️");
     } else {
-      setXisNext("X")
+      setXisNext("🤹")
     }
     const winner = calculateWinner(newBoard)
     setboard(newBoard);
