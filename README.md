@@ -19,11 +19,18 @@ PLAN :/
 Components
 
 - Board
--Renders 9 squares (dumb component)
+-Renders 9 squares  (dumb component)
+-For each state in the array (use .map), make a square where index of the button = index of array
+-Value of array = innertext of button
+-set state to XisNext which will be a boolean toggle. This decides which player is next. 
+-In onclick, we will call function to change array and also toggle between which player is next.
+-If statement if XisNext = true, return X. Else return 0.
+
 
 Behaviour - 
 Return Square
 Set this prop called value
+HandleClick function that will set state and use splice method to splice at certain index that we want to change.
 
 
 
@@ -46,9 +53,13 @@ OnClick will lead our button to change from null to nought or cross (fat arrow n
 -Renders board with placeholder values
 -We need a null array state that will change with noughts and crosses in
 -Keep player moves stored in game state
-[[null, null, null]
-[null, null, null]
-[null, null, null]]
+[null[0], null[1], null[2],
+null[3], null[4], null[5], 
+null[6], null[7], null[8]]
+
+Behaviour
+-calculateWinner function that takes in squares array
+-assign a variable (lines) to possible winning lines
 
 Props -
 Change state function onClick (event listener needed)
