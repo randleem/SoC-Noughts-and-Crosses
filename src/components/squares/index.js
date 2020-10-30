@@ -2,7 +2,7 @@ import React from "react";
 
 function Button(item, index, handleClick) {
   return (
-    <button index={index} onClick={handleClick}>
+    <button index={index} onClick={() => handleClick(index)}>
       {item}
     </button>
   );
